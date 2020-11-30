@@ -4,9 +4,7 @@ class JournalEntry extends Component{
   render() {
     return(
       <div>
-        <p>This is a journal entry</p>
-        <p>This is a journal entry</p>
-        <p>This is a journal entry</p>
+        <li>{this.props.children}</li>
       </div>
     )
   }

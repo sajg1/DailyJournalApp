@@ -13,11 +13,13 @@ class DailyEntryForm extends Component {
       input: event.target.value
     })
   }
+
   render() {
     return(
       <div>
         <form className="entry-form">
           <input value={this.state.input} onChange={this.handleChange}></input>
+          <button type="submit">Submit Entry</button>
         </form>
       </div>
     )
