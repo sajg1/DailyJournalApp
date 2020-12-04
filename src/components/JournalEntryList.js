@@ -7,7 +7,7 @@ class JournalEntryList extends Component {
     const entriesNode =
       this.props.entries.map(entry => {
         return (
-          <JournalEntry >{entry}</JournalEntry>
+          <JournalEntry key={entry.id} >{entry.text}</JournalEntry>
         )
       })
     return(

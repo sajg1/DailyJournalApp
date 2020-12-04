@@ -6,10 +6,27 @@ class JournalContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: ["first comment", "second comment", "third comment"]
+      entries: [
+        {
+        id: 1,
+        text: "Hello"
+        },
+        {
+        id: 2,
+        text: "Hi"
+        }
+      ]
     };
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   };
+
+  handleSubmit(entrySubmitted) {
+    entrySubmitted.id = Date.now();
+    const updatedEntries = [...this.state.entries, entrySubmitted];
+    this.setState({entries: updatedEntries});
+  }
 
   render() {
     return(
