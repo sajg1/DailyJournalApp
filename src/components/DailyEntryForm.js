@@ -32,8 +32,25 @@ class DailyEntryForm extends Component {
     return(
       <div>
         <form className="entry-form" onSubmit={this.handleFormSubmit}>
-          <input value={this.state.input} onChange={this.handleChange}></input>
-          <input type="submit" value="Submit Entry"/>
+          <div>
+            <label for="grateful">I am grateful for... </label>
+            <br/>
+            <textarea name="grateful" placeholder="3 things you are grateful for..."/>
+          </div>
+          <div>
+            <label for="great-day">What would make today great?</label>
+            <br/>
+            <textarea name="great-day" placeholder="3 things that would make today great..."/>
+          </div>
+          <div>
+            <label for="affirmation">Daily Affirmation</label>
+            <br/>
+            <textarea name="affirmation" placeholder="I am..."/>
+          </div>
+          <div>
+            <input value={this.state.input} onChange={this.handleChange}></input>
+            <input type="submit" value="Submit Entry"/>
+          </div>
         </form>
       </div>
     )
