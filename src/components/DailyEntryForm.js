@@ -47,11 +47,12 @@ class DailyEntryForm extends Component {
     const grateful = this.state.grateful.trim();
     const greatDay = this.state.greatDay.trim();
     const affirmation = this.state.affirmation.trim();
+    const timestamp = (new Date(Date.now())).toDateString()
     if (!grateful || !greatDay || !affirmation) {
       return
     }
     // change
-    this.props.handleSubmit({grateful: grateful, greatDay: greatDay, affirmation: affirmation });
+    this.props.handleSubmit({timestamp: timestamp, grateful: grateful, greatDay: greatDay, affirmation: affirmation });
     //change setState to replace input with  the above.
     this.setState({grateful: "", greatDay: "", affirmation: ""})
 
