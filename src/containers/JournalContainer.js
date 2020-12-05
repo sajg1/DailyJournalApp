@@ -6,16 +6,7 @@ class JournalContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: [
-        {
-        id: 1,
-        text: "Hello"
-        },
-        {
-        id: 2,
-        text: "Hi"
-        }
-      ]
+      entries: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);

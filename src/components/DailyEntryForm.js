@@ -4,7 +4,6 @@ class DailyEntryForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "",
       grateful: "",
       greatDay: "",
       affirmation: ""
@@ -44,12 +43,17 @@ class DailyEntryForm extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    const input = this.state.input.trim();
-    if (!input) {
+    // update handleFormSubmit to include grateful, greatDay and affirmation
+    const grateful = this.state.grateful.trim();
+    const greatDay = this.state.greatDay.trim();
+    const affirmation = this.state.affirmation.trim();
+    if (!grateful || !greatDay || !affirmation) {
       return
     }
-    this.props.handleSubmit({text: input});
-    this.setState({input: ""})
+    // change
+    this.props.handleSubmit({grateful: grateful, greatDay: greatDay, affirmation: affirmation });
+    //change setState to replace input with  the above.
+    this.setState({grateful: "", greatDay: "", affirmation: ""})
 
   }
 
@@ -73,7 +77,6 @@ class DailyEntryForm extends Component {
             <textarea value={this.state.affirmation} onChange={this.handleAffirmationChange} id="affirmation" name="affirmation" placeholder="I am..."/>
           </div>
           <div>
-            <input value={this.state.input} onChange={this.handleChange}></input>
             <input type="submit" value="Submit Entry"/>
           </div>
         </form>
