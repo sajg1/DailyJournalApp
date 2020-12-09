@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 class JournalEntry extends Component{
   render() {
     return(
-      <div classname="journal-entry">
+      <tbody>
         <tr>
           <th>Date</th>
           <th>What I'm Grateful For</th>
-          <th>What would make Today Great!</th>
+          <th>What Would Make Today Great</th>
           <th>Daily Affirmation</th>
         </tr>
         <tr>
@@ -16,7 +16,7 @@ class JournalEntry extends Component{
           <td>{this.props.greatDay}</td>
           <td>{this.props.affirmation}</td>
         </tr>
-      </div>
+      </tbody>
     )
   }
 }

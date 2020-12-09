@@ -12,7 +12,7 @@ class JournalEntryList extends Component {
       })
     return(
       <div>
-        <h3>This is a JournalEntryList</h3>
+        <h3>This is a JournalEntryTable</h3>
         <table>
           {entriesNode}
         </table>
