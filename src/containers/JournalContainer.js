@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DailyEntryForm from '../components/DailyEntryForm';
 import JournalEntryList from '../components/JournalEntryList';
 import NavBar from '../components/NavBar';
+import HomePage from '../components/HomePage';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class JournalContainer extends Component {
@@ -26,15 +27,15 @@ class JournalContainer extends Component {
       <Router>
         <div>
           <NavBar />
-          <h2>Journal Container</h2>
+          <Route exactpath="/" component={HomePage} />
           < Route
-            path="/"
+            path="/dailyentry"
             render={(props) => (
               <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleSubmit}/>
             )}
           />
           <Route
-            path="/"
+            path="/pastentries"
             render={(props) => (
               <JournalEntryList {...props} entries={this.state.entries} />
             )}
