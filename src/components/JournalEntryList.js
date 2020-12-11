@@ -7,7 +7,7 @@ class JournalEntryList extends Component {
     const entriesNode =
       this.props.entries.map(entry => {
         return (
-          <JournalEntry timeStamp={entry.timestamp} grateful={entry.grateful} greatDay={entry.greatDay} affirmation={entry.affirmation} key={entry.id} ></JournalEntry>
+          <JournalEntry timeStamp={entry.timestamp} grateful={entry.grateful} greatDay1={entry.greatDay[0]} affirmation={entry.affirmation} key={entry.id} ></JournalEntry>
         )
       })
     return(
