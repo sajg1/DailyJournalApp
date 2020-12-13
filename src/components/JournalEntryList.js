@@ -9,7 +9,9 @@ class JournalEntryList extends Component {
         return (
           <JournalEntry
             timeStamp={entry.timestamp}
-            grateful={entry.grateful}
+            grateful1={entry.grateful[0]}
+            grateful2={entry.grateful[1]}
+            grateful3={entry.grateful[2]}
             greatDay1={entry.greatDay[0]}
             greatDay2={entry.greatDay[1]}
             greatDay3={entry.greatDay[2]}

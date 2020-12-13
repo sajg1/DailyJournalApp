@@ -12,19 +12,19 @@ class JournalEntry extends Component{
         </tr>
         <tr>
           <td>{this.props.timeStamp}</td>
-          <td>{this.props.grateful}</td>
+          <td>{this.props.grateful1}</td>
           <td>{this.props.greatDay1}</td>
           <td>{this.props.affirmation}</td>
         </tr>
         <tr>
           <td></td>
-          <td></td>
+          <td>{this.props.grateful2}</td>
           <td>{this.props.greatDay2}</td>
           <td></td>
         </tr>
         <tr>
           <td></td>
-          <td></td>
+          <td>{this.props.grateful3}</td>
           <td>{this.props.greatDay3}</td>
           <td></td>
         </tr>

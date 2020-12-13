@@ -5,12 +5,14 @@ class DailyEntryForm extends Component {
     super(props);
     this.state = {
       //grateful and greatDay should be an array of comments from individual inputs
-      grateful: "",
+      grateful: ["","",""],
       greatDay: ["","",""],
       affirmation: ""
 
     }
-    this.handleGratefulChange = this.handleGratefulChange.bind(this);
+    this.handleGrateful1Change = this.handleGrateful1Change.bind(this);
+    this.handleGrateful2Change = this.handleGrateful2Change.bind(this);
+    this.handleGrateful3Change = this.handleGrateful3Change.bind(this);
     this.handleGreatDay1Change = this.handleGreatDay1Change.bind(this);
     this.handleGreatDay2Change = this.handleGreatDay2Change.bind(this);
     this.handleGreatDay3Change = this.handleGreatDay3Change.bind(this);
@@ -19,12 +21,32 @@ class DailyEntryForm extends Component {
 
   }
 
-  handleGratefulChange(event) {
+  handleGrateful1Change(event) {
+    const grateful = [...this.state.grateful]
+    const grateful1 = event.target.value
+    grateful[0] = grateful1
     this.setState({
-      grateful: event.target.value
+      grateful: grateful
     })
   };
 
+  handleGrateful2Change(event) {
+    const grateful = [...this.state.grateful]
+    const grateful2 = event.target.value
+    grateful[1] = grateful2
+    this.setState({
+      grateful: grateful
+    })
+  };
+
+  handleGrateful3Change(event) {
+    const grateful = [...this.state.grateful]
+    const grateful3 = event.target.value
+    grateful[2] = grateful3
+    this.setState({
+      grateful: grateful
+    })
+  };
   handleGreatDay1Change(event) {
     const greatDay = [...this.state.greatDay]
     const greatDay1 = event.target.value
@@ -72,7 +94,7 @@ class DailyEntryForm extends Component {
     // change
     this.props.handleSubmit({timestamp: timestamp, grateful: grateful, greatDay: greatDay, affirmation: affirmation });
     //change setState to replace input with  the above.
-    this.setState({grateful: "", greatDay: ["","",""], affirmation: ""})
+    this.setState({grateful: ["","",""], greatDay: ["","",""], affirmation: ""})
 
   }
 
@@ -83,7 +105,9 @@ class DailyEntryForm extends Component {
           <div>
             <label htmlFor="grateful">I am grateful for... </label>
             <br/>
-            <textarea value={this.state.grateful} onChange={this.handleGratefulChange} id="grateful" name="grateful" placeholder="3 things you are grateful for..."></textarea>
+            <input value={this.state.grateful[0]} onChange={this.handleGrateful1Change} id="grateful1" name="grateful1" placeholder="1..."/>
+            <input value={this.state.grateful[1]} onChange={this.handleGrateful2Change} id="grateful2" name="grateful2" placeholder="2..."/>
+            <input value={this.state.grateful[2]} onChange={this.handleGrateful3Change} id="grateful3" name="grateful3" placeholder="3..."/>
           </div>
           <div className="great-day">
             <label htmlFor="great-day">What would make today great?</label>
