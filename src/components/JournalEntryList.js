@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import JournalEntry from './JournalEntry';
+import '../style/JournalEntryListStyle.css';
 
 class JournalEntryList extends Component {
 
@@ -23,12 +24,14 @@ class JournalEntryList extends Component {
     return(
       <div>
         <h3>This is a JournalEntryTable</h3>
-        <table>
+        <table className="journalTable">
           {entriesNode}
         </table>
       </div>
     )
   }
 }
+
+
 
 export default JournalEntryList;
