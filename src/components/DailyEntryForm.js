@@ -12,6 +12,8 @@ class DailyEntryForm extends Component {
     }
     this.handleGratefulChange = this.handleGratefulChange.bind(this);
     this.handleGreatDay1Change = this.handleGreatDay1Change.bind(this);
+    this.handleGreatDay2Change = this.handleGreatDay2Change.bind(this);
+    this.handleGreatDay3Change = this.handleGreatDay3Change.bind(this);
     this.handleAffirmationChange = this.handleAffirmationChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
@@ -22,15 +24,34 @@ class DailyEntryForm extends Component {
       grateful: event.target.value
     })
   };
-//working on changing greatDay and grateful from a single string to an array of strings
+
   handleGreatDay1Change(event) {
     const greatDay = [...this.state.greatDay]
     const greatDay1 = event.target.value
     greatDay[0] = greatDay1
     this.setState({
-        greatDay: greatDay
+      greatDay: greatDay
     })
   }
+
+  handleGreatDay2Change(event) {
+    const greatDay = [...this.state.greatDay]
+    const greatDay2 = event.target.value
+    greatDay[1] = greatDay2
+    this.setState({
+      greatDay: greatDay
+    })
+  }
+
+  handleGreatDay3Change(event) {
+    const greatDay = [...this.state.greatDay]
+    const greatDay3 = event.target.value
+    greatDay[2] = greatDay3
+    this.setState({
+      greatDay: greatDay
+    })
+  }
+//working on changing greatDay and grateful from a single string to an array of string.
 
   handleAffirmationChange(event) {
     this.setState({
@@ -51,7 +72,7 @@ class DailyEntryForm extends Component {
     // change
     this.props.handleSubmit({timestamp: timestamp, grateful: grateful, greatDay: greatDay, affirmation: affirmation });
     //change setState to replace input with  the above.
-    this.setState({grateful: "", greatDay: "", affirmation: ""})
+    this.setState({grateful: "", greatDay: ["","",""], affirmation: ""})
 
   }
 
@@ -64,10 +85,12 @@ class DailyEntryForm extends Component {
             <br/>
             <textarea value={this.state.grateful} onChange={this.handleGratefulChange} id="grateful" name="grateful" placeholder="3 things you are grateful for..."></textarea>
           </div>
-          <div>
+          <div className="great-day">
             <label htmlFor="great-day">What would make today great?</label>
             <br/>
-            <input value={this.state.greatDay[0]} onChange={this.handleGreatDay1Change} id="great-day" name="great-day" placeholder="3 things that would make today great..."/>
+              <input value={this.state.greatDay[0]} onChange={this.handleGreatDay1Change} id="great-day1" name="great-day1" placeholder="1..."/>
+              <input value={this.state.greatDay[1]} onChange={this.handleGreatDay2Change} id="great-day2" name="great-day2" placeholder="2..."/>
+              <input value={this.state.greatDay[2]} onChange={this.handleGreatDay3Change} id="great-day3" name="great-day3" placeholder="3..."/>
           </div>
           <div>
             <label htmlFor="affirmation">Daily Affirmation</label>
