@@ -21,10 +21,19 @@ class JournalEntryList extends Component {
           />
         )
       })
+
     return(
       <div>
         <h3>This is a JournalEntryTable</h3>
         <table className="journalTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>What I'm Grateful For</th>
+              <th>What Would Make Today Great</th>
+              <th>Daily Affirmation</th>
+            </tr>
+          </thead>
           {entriesNode}
         </table>
       </div>
