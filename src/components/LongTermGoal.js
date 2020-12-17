@@ -9,10 +9,9 @@ class LongTermGoal extends Component {
 
   handleCompletedGoal(event) {
     event.preventDefault();
-    const id = this.props.id;
-    const description = this.props.description;
-    const timescale = this.props.timescale;
-    this.props.handleCompletedGoal({id:id, description: description, timescale: timescale});
+    const completedGoal = this.props.goalList[this.props.id-1];
+    console.log("CompletedGoal :", completedGoal);
+    this.props.handleCompletedGoal(completedGoal);
   }
   render() {
     return (
@@ -21,7 +20,7 @@ class LongTermGoal extends Component {
           <td>{this.props.id}</td>
           <td>{this.props.description}</td>
           <td>{this.props.timescale}</td>
-          <td><input type="button" value="Goal Completed &#10004;" onClick={this.props.handleCompletedGoal}/></td>
+          <td><input type="button" value="Goal Completed &#10004;" onClick={this.handleCompletedGoal}/></td>
         </tr>
       </tbody>
     )

@@ -21,6 +21,16 @@ class JournalContainer extends Component {
           id: 2,
           description: "Get my purple belt in JiuJitsu",
           timescale: "2 years"
+        },
+        {
+          id: 3,
+          description: "Get my brown belt in JiuJitsu",
+          timescale: "3 years"
+        },
+        {
+          id: 4,
+          description: "Get my black belt in JiuJitsu",
+          timescale: "5 years"
         }
       ],
       completedGoals: []
@@ -36,13 +46,14 @@ class JournalContainer extends Component {
     const updatedEntries = [...this.state.entries, entrySubmitted];
     this.setState({entries: updatedEntries});
   }
-
+  
   handleCompletedGoalTransfer(selectedGoal) {
     const goals = [...this.state.goals];
     const completedGoals = [...this.state.completedGoals];
-    const index = goals.indexOf(selectedGoal.id);
-    const goalCompleted = goals.splice(index, 1)[0];
-    completedGoals.push(goalCompleted);
+    const index = goals.indexOf(selectedGoal);
+    console.log("index", index)
+    const goalCompleted = goals.splice(index, 1);
+    completedGoals.push(goalCompleted[0]);
     this.setState({
       goals: goals,
       completedGoals: completedGoals

@@ -14,6 +14,7 @@ class LongTermGoalTable extends Component {
             timescale={goal.timescale}
             key={goal.id}
             handleCompletedGoal={this.props.handleCompletedGoal}
+            goalList={this.props.goalList}
           />
         )
       })
