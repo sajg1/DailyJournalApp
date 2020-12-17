@@ -46,7 +46,7 @@ class JournalContainer extends Component {
     const updatedEntries = [...this.state.entries, entrySubmitted];
     this.setState({entries: updatedEntries});
   }
-  
+
   handleCompletedGoalTransfer(selectedGoal) {
     const goals = [...this.state.goals];
     const completedGoals = [...this.state.completedGoals];
@@ -69,7 +69,7 @@ class JournalContainer extends Component {
           <Route
             path="/goals"
             render={(props) => (
-              <LongTermGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} />
+              <LongTermGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
             )}
           />
           < Route

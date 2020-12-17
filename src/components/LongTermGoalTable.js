@@ -9,9 +9,9 @@ class LongTermGoalTable extends Component {
       this.props.goalList.map(goal => {
         return (
           <LongTermGoal
-            id={goal.id}
             description={goal.description}
             timescale={goal.timescale}
+            id={goal.id}
             key={goal.id}
             handleCompletedGoal={this.props.handleCompletedGoal}
             goalList={this.props.goalList}
@@ -19,9 +19,22 @@ class LongTermGoalTable extends Component {
         )
       })
 
+    const completedGoalsNode =
+      this.props.completedGoalsList.map(completedGoal => {
+        return (
+          <LongTermGoal
+            description={completedGoal.description}
+            timescale={completedGoal.timescale}
+            id={completedGoal.id}
+            key={completedGoal.id}
+          />
+        )
+      })
+
     return (
       <div>
         <div className="goals">
+          <h3>Current Goals</h3>
           <table className="goalTable">
             <thead>
               <tr>
@@ -35,7 +48,18 @@ class LongTermGoalTable extends Component {
           </table>
         </div>
         <div className="completedGoals">
-
+          <h3>Completed Goal</h3>
+          <table className="completedGoalsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>TimeScale</th>
+                <th></th>
+              </tr>
+            </thead>
+            {completedGoalsNode}
+          </table>
         </div>
 
       </div>
