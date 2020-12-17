@@ -83,7 +83,6 @@ class DailyEntryForm extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    // update handleFormSubmit to include grateful, greatDay and affirmation
     const grateful = this.state.grateful;
     const greatDay = this.state.greatDay;
     const affirmation = this.state.affirmation.trim();

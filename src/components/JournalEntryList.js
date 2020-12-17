@@ -24,7 +24,6 @@ class JournalEntryList extends Component {
 
     return(
       <div>
-        <h3>This is a JournalEntryTable</h3>
         <table className="journalTable">
           <thead>
             <tr>

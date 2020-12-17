@@ -22,10 +22,12 @@ class JournalContainer extends Component {
           description: "Get my purple belt in JiuJitsu",
           timescale: "2 years"
         }
-      ]
+      ],
+      completedGoals: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCompletedGoalTransfer = this.handleCompletedGoalTransfer.bind(this);
 
   };
 
@@ -35,16 +37,28 @@ class JournalContainer extends Component {
     this.setState({entries: updatedEntries});
   }
 
+  handleCompletedGoalTransfer(selectedGoal) {
+    const goals = [...this.state.goals];
+    const completedGoals = [...this.state.completedGoals];
+    const index = goals.indexOf(selectedGoal.id);
+    const goalCompleted = goals.splice(index, 1)[0];
+    completedGoals.push(goalCompleted);
+    this.setState({
+      goals: goals,
+      completedGoals: completedGoals
+    })
+  }
+
   render() {
     return(
       <Router>
-        <div>
+        <div className="container">
           <NavBar />
           <Route exactpath="/" component={HomePage} />
           <Route
             path="/goals"
             render={(props) => (
-              <LongTermGoalTable {...props} goalList={this.state.goals} />
+              <LongTermGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} />
             )}
           />
           < Route
