@@ -9,8 +9,9 @@ class CurrentGoal extends Component {
 
   handleCompletedGoal(event) {
     event.preventDefault();
-    const completedGoal = this.props.goalList[this.props.id-1];
-    console.log("CompletedGoal :", completedGoal);
+    const goalList = [...this.props.goalList]
+    const completedGoal = goalList.find(goal => goal.id === this.props.id)
+    console.log("completedGoal: ", completedGoal);
     this.props.handleCompletedGoal(completedGoal);
   }
   render() {
