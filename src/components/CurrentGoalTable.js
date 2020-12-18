@@ -10,9 +10,10 @@ class CurrentGoalTable extends Component {
       this.props.goalList.map(goal => {
         return (
           <CurrentGoal
-            description={goal.description}
-            timescale={goal.timescale}
+            goalDescription={goal.goalDescription}
             id={goal.id}
+            timescale={goal.timescale}
+            startDate={goal.startDate}
             key={goal.id}
             handleCompletedGoal={this.props.handleCompletedGoal}
             goalList={this.props.goalList}
@@ -34,13 +35,13 @@ class CurrentGoalTable extends Component {
 
     return (
       <div>
-        <GoalForm />
+        <GoalForm handleGoalToSubmit={this.props.handleGoalToSubmit}/>
         <div className="goals">
           <h3>Current Goals</h3>
           <table className="goalTable">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>Start Date</th>
                 <th>Description</th>
                 <th>TimeScale</th>
                 <th></th>

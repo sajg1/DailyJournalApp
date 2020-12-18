@@ -12,40 +12,28 @@ class JournalContainer extends Component {
     super(props);
     this.state = {
       entries: [],
-      goals: [
-        {
-          id: 1,
-          description: "To commit two more times to github",
-          timescale: "2 hours"
-        },
-        {
-          id: 2,
-          description: "Get my purple belt in JiuJitsu",
-          timescale: "2 years"
-        },
-        {
-          id: 3,
-          description: "Get my brown belt in JiuJitsu",
-          timescale: "3 years"
-        },
-        {
-          id: 4,
-          description: "Get my black belt in JiuJitsu",
-          timescale: "5 years"
-        }
-      ],
+      goals: [],
       completedGoals: []
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDailyEntrySubmit = this.handleDailyEntrySubmit.bind(this);
+    this.handleGoalToSubmit = this.handleGoalToSubmit.bind(this);
     this.handleCompletedGoalTransfer = this.handleCompletedGoalTransfer.bind(this);
 
   };
 
-  handleSubmit(entrySubmitted) {
+  handleDailyEntrySubmit(entrySubmitted) {
     entrySubmitted.id = Date.now();
     const updatedEntries = [...this.state.entries, entrySubmitted];
     this.setState({entries: updatedEntries});
+  }
+
+  handleGoalToSubmit(goalSubmitted) {
+    goalSubmitted.id = Date.now();
+    const updatedGoals = [...this.state.goals, goalSubmitted];
+    console.log("Goal Submitted: ", goalSubmitted)
+    this.setState({goals: updatedGoals})
+    console.log("Goals Array: ", this.state.goals)
   }
 
   handleCompletedGoalTransfer(selectedGoal) {
@@ -70,7 +58,7 @@ class JournalContainer extends Component {
           <Route
             path="/goals"
             render={(props) => (
-              <CurrentGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+              <CurrentGoalTable {...props} handleGoalToSubmit={this.handleGoalToSubmit} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
             )}
           />
           <Route
@@ -82,7 +70,7 @@ class JournalContainer extends Component {
           < Route
             path="/dailyentry"
             render={(props) => (
-              <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleSubmit}/>
+              <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
             )}
           />
           <Route

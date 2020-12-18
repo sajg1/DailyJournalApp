@@ -10,8 +10,10 @@ class CompletedGoalTable extends Component {
       this.props.completedGoalsList.map(completedGoal => {
         return (
           <CompletedGoal
-            description={completedGoal.description}
+            goalDescription={completedGoal.goalDescription}
             timescale={completedGoal.timescale}
+            startDate={completedGoal.startDate}
+            completionDate={completedGoal.completionDate}
             id={completedGoal.id}
             key={completedGoal.id}
           />
@@ -24,10 +26,10 @@ class CompletedGoalTable extends Component {
         <table className="completedGoalsTable">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>Start Date</th>
               <th>Description</th>
               <th>TimeScale</th>
-              <th></th>
+              <th>Completion Date</th>
             </tr>
           </thead>
           {completedGoalsNode}

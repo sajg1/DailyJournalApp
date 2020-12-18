@@ -6,10 +6,10 @@ class CompletedGoal extends Component {
     return (
       <tbody>
         <tr>
-          <td>{this.props.id}</td>
-          <td>{this.props.description}</td>
+          <td>{this.props.startDate}</td>
+          <td>{this.props.goalDescription}</td>
           <td>{this.props.timescale}</td>
-          <td></td>
+          <td>{this.props.completionDate}</td>
         </tr>
       </tbody>
     )

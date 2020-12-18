@@ -11,6 +11,7 @@ class CurrentGoal extends Component {
     event.preventDefault();
     const goalList = [...this.props.goalList]
     const completedGoal = goalList.find(goal => goal.id === this.props.id)
+    completedGoal.completionDate = (new Date(Date.now())).toDateString();
     console.log("completedGoal: ", completedGoal);
     this.props.handleCompletedGoal(completedGoal);
   }
@@ -18,8 +19,8 @@ class CurrentGoal extends Component {
     return (
       <tbody>
         <tr>
-          <td>{this.props.id}</td>
-          <td>{this.props.description}</td>
+          <td>{this.props.startDate}</td>
+          <td>{this.props.goalDescription}</td>
           <td>{this.props.timescale}</td>
           <td><input type="button" value="Goal Completed &#10004;" onClick={this.handleCompletedGoal}/></td>
         </tr>
