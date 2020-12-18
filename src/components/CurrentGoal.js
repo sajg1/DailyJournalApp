@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class LongTermGoal extends Component {
+class CurrentGoal extends Component {
   constructor(props) {
     super(props);
 
@@ -28,4 +28,4 @@ class LongTermGoal extends Component {
 
   }
 
-export default LongTermGoal;
+export default CurrentGoal;

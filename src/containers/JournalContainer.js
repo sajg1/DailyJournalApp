@@ -3,7 +3,8 @@ import DailyEntryForm from '../components/DailyEntryForm';
 import JournalEntryList from '../components/JournalEntryList';
 import NavBar from '../components/NavBar';
 import HomePage from '../components/HomePage';
-import LongTermGoalTable from '../components/LongTermGoalTable';
+import CurrentGoalTable from '../components/CurrentGoalTable';
+import CompletedGoalTable from '../components/CompletedGoalTable';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class JournalContainer extends Component {
@@ -69,7 +70,13 @@ class JournalContainer extends Component {
           <Route
             path="/goals"
             render={(props) => (
-              <LongTermGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+              <CurrentGoalTable {...props} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+            )}
+          />
+          <Route
+            path="/goals"
+            render={(props) => (
+              <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
             )}
           />
           < Route

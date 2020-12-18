@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import LongTermGoal from './LongTermGoal';
+import CurrentGoal from './CurrentGoal';
+import GoalForm from './GoalForm';
 import '../style/LongTermGoalTableStyle.css';
 
-class LongTermGoalTable extends Component {
+class CurrentGoalTable extends Component {
 
   render() {
     const goalNode =
       this.props.goalList.map(goal => {
         return (
-          <LongTermGoal
+          <CurrentGoal
             description={goal.description}
             timescale={goal.timescale}
             id={goal.id}
@@ -19,20 +20,21 @@ class LongTermGoalTable extends Component {
         )
       })
 
-    const completedGoalsNode =
-      this.props.completedGoalsList.map(completedGoal => {
-        return (
-          <LongTermGoal
-            description={completedGoal.description}
-            timescale={completedGoal.timescale}
-            id={completedGoal.id}
-            key={completedGoal.id}
-          />
-        )
-      })
+    // const completedGoalsNode =
+    //   this.props.completedGoalsList.map(completedGoal => {
+    //     return (
+    //       <CurrentGoal
+    //         description={completedGoal.description}
+    //         timescale={completedGoal.timescale}
+    //         id={completedGoal.id}
+    //         key={completedGoal.id}
+    //       />
+    //     )
+    //   })
 
     return (
       <div>
+        <GoalForm />
         <div className="goals">
           <h3>Current Goals</h3>
           <table className="goalTable">
@@ -47,25 +49,10 @@ class LongTermGoalTable extends Component {
             {goalNode}
           </table>
         </div>
-        <div className="completedGoals">
-          <h3>Completed Goal</h3>
-          <table className="completedGoalsTable">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Description</th>
-                <th>TimeScale</th>
-                <th></th>
-              </tr>
-            </thead>
-            {completedGoalsNode}
-          </table>
-        </div>
-
       </div>
 
     )
   }
 }
 
-export default LongTermGoalTable;
+export default CurrentGoalTable;
