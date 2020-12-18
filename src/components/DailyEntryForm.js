@@ -10,6 +10,8 @@ class DailyEntryForm extends Component {
       affirmation: ""
 
     }
+    this.handleGratefulChange = this.handleGratefulChange.bind(this);
+    this.handleGreatDayChange = this.handleGreatDayChange.bind(this);
     this.handleGrateful1Change = this.handleGrateful1Change.bind(this);
     this.handleGrateful2Change = this.handleGrateful2Change.bind(this);
     this.handleGrateful3Change = this.handleGrateful3Change.bind(this);
@@ -20,60 +22,46 @@ class DailyEntryForm extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
   }
-
-  handleGrateful1Change(event) {
+  handleGratefulChange(event, i) {
     const grateful = [...this.state.grateful]
-    const grateful1 = event.target.value
-    grateful[0] = grateful1
+    const gratefulInstance = event.target.value
+    grateful[i] = gratefulInstance
     this.setState({
       grateful: grateful
     })
+  }
+
+  handleGreatDayChange(event, i) {
+    const greatDay = [...this.state.greatDay]
+    const greatDayInstance = event.target.value
+    greatDay[i] = greatDayInstance
+    this.setState({
+      greatDay: greatDay
+    })
+  }
+
+  handleGrateful1Change(event) {
+    this.handleGratefulChange(event, 0)
   };
 
   handleGrateful2Change(event) {
-    const grateful = [...this.state.grateful]
-    const grateful2 = event.target.value
-    grateful[1] = grateful2
-    this.setState({
-      grateful: grateful
-    })
+    this.handleGratefulChange(event, 1)
   };
 
   handleGrateful3Change(event) {
-    const grateful = [...this.state.grateful]
-    const grateful3 = event.target.value
-    grateful[2] = grateful3
-    this.setState({
-      grateful: grateful
-    })
+    this.handleGratefulChange(event, 2)
   };
   handleGreatDay1Change(event) {
-    const greatDay = [...this.state.greatDay]
-    const greatDay1 = event.target.value
-    greatDay[0] = greatDay1
-    this.setState({
-      greatDay: greatDay
-    })
+    this.handleGreatDayChange(event,0)
   }
 
   handleGreatDay2Change(event) {
-    const greatDay = [...this.state.greatDay]
-    const greatDay2 = event.target.value
-    greatDay[1] = greatDay2
-    this.setState({
-      greatDay: greatDay
-    })
+    this.handleGreatDayChange(event, 1)
   }
 
   handleGreatDay3Change(event) {
-    const greatDay = [...this.state.greatDay]
-    const greatDay3 = event.target.value
-    greatDay[2] = greatDay3
-    this.setState({
-      greatDay: greatDay
-    })
+    this.handleGreatDayChange(event, 2)
   }
-//working on changing greatDay and grateful from a single string to an array of string.
 
   handleAffirmationChange(event) {
     this.setState({
@@ -86,7 +74,7 @@ class DailyEntryForm extends Component {
     const grateful = this.state.grateful;
     const greatDay = this.state.greatDay;
     const affirmation = this.state.affirmation.trim();
-    const timestamp = (new Date(Date.now())).toDateString()
+      const timestamp = (new Date(Date.now())).toDateString()
     if (!grateful || !greatDay || !affirmation) {
       return
     }

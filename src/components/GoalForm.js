@@ -50,6 +50,7 @@ class GoalForm extends Component {
   render() {
     return(
       <div className="goalForm">
+        <h4>Enter your Goals below to keep track of your progress: </h4>
         <form onSubmit={this.handleGoalSubmit}>
           <label htmlFor="goal-description">What is your goal : </label>
           <input value={this.state.goalDescription} onChange={this.handleGoalChange} id="goal-description" placeholder="Describe your goal..."></input>
