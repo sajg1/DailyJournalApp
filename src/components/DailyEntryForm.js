@@ -7,7 +7,8 @@ class DailyEntryForm extends Component {
       //grateful and greatDay should be an array of comments from individual inputs
       grateful: ["","",""],
       greatDay: ["","",""],
-      affirmation: ""
+      affirmation: "",
+      displayMessage: false
 
     }
     this.handleGratefulChange = this.handleGratefulChange.bind(this);
@@ -21,6 +22,7 @@ class DailyEntryForm extends Component {
     this.handleAffirmationChange = this.handleAffirmationChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
+// Generic functions to handle each input for GreatDay and Grateful.
   }
   handleGratefulChange(event, i) {
     const grateful = [...this.state.grateful]
@@ -39,7 +41,7 @@ class DailyEntryForm extends Component {
       greatDay: greatDay
     })
   }
-
+// Handle Grateful
   handleGrateful1Change(event) {
     this.handleGratefulChange(event, 0)
   };
@@ -51,6 +53,8 @@ class DailyEntryForm extends Component {
   handleGrateful3Change(event) {
     this.handleGratefulChange(event, 2)
   };
+
+//Handle GreatDay
   handleGreatDay1Change(event) {
     this.handleGreatDayChange(event,0)
   }
@@ -63,12 +67,14 @@ class DailyEntryForm extends Component {
     this.handleGreatDayChange(event, 2)
   }
 
+// Handle Affirmation
   handleAffirmationChange(event) {
     this.setState({
       affirmation: event.target.value
     })
   }
 
+//Handle Submission of Form
   handleFormSubmit(event) {
     event.preventDefault();
     const grateful = this.state.grateful;
@@ -78,16 +84,17 @@ class DailyEntryForm extends Component {
     if (!grateful || !greatDay || !affirmation) {
       return
     }
-    // change
     this.props.handleSubmit({timestamp: timestamp, grateful: grateful, greatDay: greatDay, affirmation: affirmation });
-    //change setState to replace input with  the above.
-    this.setState({grateful: ["","",""], greatDay: ["","",""], affirmation: ""})
+    this.setState({grateful: ["","",""], greatDay: ["","",""], affirmation: "", displayMessage: true})
 
   }
 
   render() {
-    return(
-      <div>
+    let display = "";
+    if (this.state.displayMessage) {
+      display = <p style={{color: "white", backgroundColor: "lightBlue"}}>Congratulations, you have completed your daily entry!</p>
+    } else {
+      display =
         <form className="entry-form" onSubmit={this.handleFormSubmit}>
           <div>
             <label htmlFor="grateful">I am grateful for... </label>
@@ -112,7 +119,9 @@ class DailyEntryForm extends Component {
             <input type="submit" value="Submit Entry"/>
           </div>
         </form>
-      </div>
+    }
+    return(
+      <div>{display}</div>
     )
   }
 }

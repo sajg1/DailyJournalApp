@@ -22,7 +22,7 @@ class CompletedGoalTable extends Component {
 
     return (
       <div className="completedGoals">
-        <h3>Completed Goal</h3>
+        <h3>Completed Goals</h3>
         <table className="completedGoalsTable">
           <thead>
             <tr>
