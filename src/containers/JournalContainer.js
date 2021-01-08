@@ -55,6 +55,12 @@ class JournalContainer extends Component {
         <div className="container">
           <NavBar />
           <Route exactpath="/" component={HomePage} />
+          < Route
+          path="/dailyentry"
+          render={(props) => (
+            <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
+          )}
+          />
           <Route
             path="/goals"
             render={(props) => (
@@ -65,12 +71,6 @@ class JournalContainer extends Component {
             path="/goals"
             render={(props) => (
               <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
-            )}
-          />
-          < Route
-            path="/dailyentry"
-            render={(props) => (
-              <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
             )}
           />
           <Route

@@ -22,19 +22,29 @@ class JournalEntryList extends Component {
         )
       })
 
+    let journalEntryListDisplay = "";
+    if (this.props.entries.length === 0) {
+      journalEntryListDisplay = <p style={{color:"white", backgroundColor:"red"}}>--- No entries to display ---</p>
+    } else {
+      journalEntryListDisplay =
+        <div>
+          <table className="journalTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>What I'm Grateful For</th>
+                <th>What Would Make Today Great</th>
+                <th>Daily Affirmation</th>
+              </tr>
+            </thead>
+            {entriesNode}
+          </table>
+        </div>
+    }
+
     return(
       <div>
-        <table className="journalTable">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>What I'm Grateful For</th>
-              <th>What Would Make Today Great</th>
-              <th>Daily Affirmation</th>
-            </tr>
-          </thead>
-          {entriesNode}
-        </table>
+        {journalEntryListDisplay}
       </div>
     )
   }
