@@ -24,13 +24,13 @@ class JournalEntryList extends Component {
 
     let journalEntryListDisplay = "";
     if (this.props.entries.length === 0) {
-      journalEntryListDisplay = <p style={{color:"white", backgroundColor:"red"}}>--- No entries to display ---</p>
+      journalEntryListDisplay = <p style={{color:"white", backgroundColor:"#feaa00", padding: "30px"}}>--- No entries to display ---</p>
     } else {
       journalEntryListDisplay =
         <div>
           <table className="journalTable">
             <thead>
-              <tr>
+              <tr className="title-row">
                 <th>Date</th>
                 <th>What I'm Grateful For</th>
                 <th>What Would Make Today Great</th>

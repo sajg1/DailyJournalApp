@@ -92,7 +92,7 @@ class DailyEntryForm extends Component {
   render() {
     let display = "";
     if (this.state.displayMessage) {
-      display = <p style={{color: "white", backgroundColor: "lightBlue"}}>Congratulations, you have completed your daily entry!</p>
+      display = <p style={{color: "white", backgroundColor: "#feaa00", padding: "30px"}}>Congratulations, you have completed your daily entry!</p>
     } else {
       display =
         <form className="entry-form" onSubmit={this.handleFormSubmit}>

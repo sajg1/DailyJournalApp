@@ -20,10 +20,10 @@ class CurrentGoalTable extends Component {
         />
       )
     })
-    
+
     let currentGoalTableDisplay = "";
     if (this.props.goalList.length === 0) {
-      currentGoalTableDisplay = <p style={{color: "white", backgroundColor: "red"}}>--- No current goals to display ---</p>
+      currentGoalTableDisplay = <p style={{color: "white", backgroundColor: "#feaa00", padding:"30px"}}>--- No current goals to display ---</p>
     } else {
       currentGoalTableDisplay =
         <div className="goals">

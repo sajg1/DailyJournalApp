@@ -18,10 +18,10 @@ class CompletedGoalTable extends Component {
         />
       )
     })
-    
+
     let completedGoalTableDisplay = '';
     if (this.props.completedGoalsList.length === 0) {
-      completedGoalTableDisplay = <p style={{color: "white", backgroundColor: "red"}}>--- No completed goals to display ---</p>
+      completedGoalTableDisplay = <p style={{color: "white", backgroundColor: "#feaa00", padding: "30px"}}>--- No completed goals to display ---</p>
     } else {
       completedGoalTableDisplay =
         <div className="completedGoals">

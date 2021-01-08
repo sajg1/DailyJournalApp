@@ -54,31 +54,33 @@ class JournalContainer extends Component {
       <Router>
         <div className="container">
           <NavBar />
-          <Route exactpath="/" component={HomePage} />
-          < Route
-          path="/dailyentry"
-          render={(props) => (
-            <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
-          )}
-          />
-          <Route
-            path="/goals"
+          <div className="main-display">
+            <Route path="/" component={HomePage} />
+            < Route
+            path="/dailyentry"
             render={(props) => (
-              <CurrentGoalTable {...props} handleGoalToSubmit={this.handleGoalToSubmit} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+              <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
             )}
-          />
-          <Route
-            path="/goals"
-            render={(props) => (
-              <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
-            )}
-          />
-          <Route
-            path="/pastentries"
-            render={(props) => (
-              <JournalEntryList {...props} entries={this.state.entries} />
-            )}
-          />
+            />
+            <Route
+              path="/goals"
+              render={(props) => (
+                <CurrentGoalTable {...props} handleGoalToSubmit={this.handleGoalToSubmit} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+              )}
+            />
+            <Route
+              path="/goals"
+              render={(props) => (
+                <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
+              )}
+            />
+            <Route
+              path="/pastentries"
+              render={(props) => (
+                <JournalEntryList {...props} entries={this.state.entries} />
+              )}
+            />
+          </div>
         </div>
       </ Router>
     )

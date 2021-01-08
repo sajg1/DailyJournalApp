@@ -17,7 +17,7 @@ class JournalEntry extends Component {
           <td>{this.props.greatDay2}</td>
           <td></td>
         </tr>
-        <tr>
+        <tr className="last-row">
           <th></th>
           <td>{this.props.grateful3}</td>
           <td>{this.props.greatDay3}</td>
