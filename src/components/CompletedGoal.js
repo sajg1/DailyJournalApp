@@ -5,7 +5,7 @@ class CompletedGoal extends Component {
   render() {
     return (
       <tbody>
-        <tr>
+        <tr className="completed-row">
           <td>{this.props.startDate}</td>
           <td>{this.props.goalDescription}</td>
           <td>{this.props.timescale}</td>

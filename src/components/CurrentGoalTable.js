@@ -23,7 +23,7 @@ class CurrentGoalTable extends Component {
 
     let currentGoalTableDisplay = "";
     if (this.props.goalList.length === 0) {
-      currentGoalTableDisplay = <p style={{color: "white", backgroundColor: "#feaa00", padding:"30px"}}>--- No current goals to display ---</p>
+      currentGoalTableDisplay = <p className="no-display">--- No current goals to display ---</p>
     } else {
       currentGoalTableDisplay =
         <div className="goals">
@@ -41,19 +41,6 @@ class CurrentGoalTable extends Component {
           </table>
         </div>
     }
-
-
-    // const completedGoalsNode =
-    //   this.props.completedGoalsList.map(completedGoal => {
-    //     return (
-    //       <CurrentGoal
-    //         description={completedGoal.description}
-    //         timescale={completedGoal.timescale}
-    //         id={completedGoal.id}
-    //         key={completedGoal.id}
-    //       />
-    //     )
-    //   })
 
     return (
       <div>

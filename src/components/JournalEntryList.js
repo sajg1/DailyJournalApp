@@ -24,7 +24,7 @@ class JournalEntryList extends Component {
 
     let journalEntryListDisplay = "";
     if (this.props.entries.length === 0) {
-      journalEntryListDisplay = <p style={{color:"white", backgroundColor:"#feaa00", padding: "30px"}}>--- No entries to display ---</p>
+      journalEntryListDisplay = <p className="no-display">--- No entries to display ---</p>
     } else {
       journalEntryListDisplay =
         <div>

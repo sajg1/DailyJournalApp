@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.goal-form {
+  border: 2px solid #feaa00;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 200px 0 200px;
+
+}
+label {
+  display: inline-block;
+  padding: 12px 12px 12px 0;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px ;
+  border: 1px solid grey;
+  background-color: #342628;
+  color: #f7f4ef;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-top: 6px;
+}
+
+input[type=submit]:hover {
+  background-color: #feaa00;
+}
+.col-25 {
+  float:left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float:left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

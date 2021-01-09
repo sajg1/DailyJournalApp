@@ -21,14 +21,14 @@ class CompletedGoalTable extends Component {
 
     let completedGoalTableDisplay = '';
     if (this.props.completedGoalsList.length === 0) {
-      completedGoalTableDisplay = <p style={{color: "white", backgroundColor: "#feaa00", padding: "30px"}}>--- No completed goals to display ---</p>
+      completedGoalTableDisplay = <p className="no-display">--- No completed goals to display ---</p>
     } else {
       completedGoalTableDisplay =
         <div className="completedGoals">
           <h3>Completed Goals</h3>
           <table className="completedGoalsTable">
             <thead>
-              <tr>
+              <tr className="completed-title-row">
                 <th>Start Date</th>
                 <th>Description</th>
                 <th>TimeScale</th>

@@ -4,22 +4,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-collapse: collapse;
 }
 
-table {
-  border-collapse:collapse;
-
+.completed-title-row {
+  border-bottom: 2px solid #788402;
 }
 
 td, th {
   width: 250px;
   padding: 0.5rem;
   text-align: center;
+  word-wrap: break-word;
 
 }
 
-th {
-  border-top: white;
-  background-color: #788402;
-  border-color: #342628;
+.completed-row {
+  border-bottom: 1px solid grey;
+}
+
+.no-display {
+  color: #f7f4ef;
+  background-color: #feaa00;
+  padding: 30px;
+  border-radius: 4px;
+  margin: 6px 200px 6px 200px;
 }

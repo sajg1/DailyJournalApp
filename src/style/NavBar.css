@@ -30,5 +30,6 @@ li {
 
 .text-link:hover {
   background-color: #f7f4ef;
+  border-radius: 4px;
   color: #342628;
 }
