@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 import HomePage from '../components/HomePage';
 import CurrentGoalTable from '../components/CurrentGoalTable';
 import CompletedGoalTable from '../components/CompletedGoalTable';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class JournalContainer extends Component {
   constructor(props) {
@@ -55,31 +55,30 @@ class JournalContainer extends Component {
         <div className="container">
           <NavBar />
           <div className="main-display">
-            <Route path="/" component={HomePage} />
-            < Route
-            path="/dailyentry"
-            render={(props) => (
-              <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
-            )}
-            />
-            <Route
-              path="/goals"
+            <Switch>
+              <Route
+              path="/dailyentry"
               render={(props) => (
-                <CurrentGoalTable {...props} handleGoalToSubmit={this.handleGoalToSubmit} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+                <DailyEntryForm {...props} entries={this.state.entries} handleSubmit={this.handleDailyEntrySubmit}/>
               )}
-            />
-            <Route
-              path="/goals"
-              render={(props) => (
-                <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
-              )}
-            />
-            <Route
-              path="/pastentries"
-              render={(props) => (
-                <JournalEntryList {...props} entries={this.state.entries} />
-              )}
-            />
+              />
+              <Route
+                path="/goals"
+                render={(props) => (
+                  <div>
+                    <CurrentGoalTable {...props} handleGoalToSubmit={this.handleGoalToSubmit} handleCompletedGoal= {this.handleCompletedGoalTransfer} goalList={this.state.goals} completedGoalsList={this.state.completedGoals} />
+                    <CompletedGoalTable {...props} completedGoalsList={this.state.completedGoals} />
+                  </div>
+                )}
+              />
+              <Route
+                path="/pastentries"
+                render={(props) => (
+                  <JournalEntryList {...props} entries={this.state.entries} />
+                )}
+              />
+              <Route exactpath="/" component={HomePage} />
+            </Switch>
           </div>
         </div>
       </ Router>

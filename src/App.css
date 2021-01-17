@@ -3,6 +3,11 @@
 }
 
 body {
-  background-color: #342628;
+  background-color: #322628;
+  font-family: Verdana, Helvetica, san-serif;
   color: white;
+}
+
+.intro-vid {
+  padding: 100px;
 }

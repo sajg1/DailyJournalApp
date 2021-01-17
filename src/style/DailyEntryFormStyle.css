@@ -1,0 +1,28 @@
+.vert-input {
+  display: flex;
+  flex-direction:column;
+  margin: 0 0 5px 50px;
+
+}
+
+h4 {
+  text-align: left;
+  padding-left: 30px;
+}
+
+input[type=text] {
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.row {
+  margin: 10px;
+  padding: 20px;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin-left: 50px;
+  border-radius: 4px;
+}

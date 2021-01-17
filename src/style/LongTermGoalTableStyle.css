@@ -1,26 +1,43 @@
 
-.goalTable, .completedGoalsTable {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.goalTable {
+  color: #322628;
   border-collapse: collapse;
+  margin: 25px 200px 0 200px;
+  font-size: 0.9em;
+  min-width: 400px;
+  border: 1px solid #feaa00;
+  border-radius: 5px 5px 0 0;
+  /* hides the square corners of the table */
+  overflow:hidden;
 }
 
-.completed-title-row {
-  border-bottom: 2px solid #788402;
+.goalTable thead tr {
+  text-align:left;
+  font-weight: bold;
+  background-color: #feaa00;
+  color: #322628;
 }
 
-td, th {
+
+.goalTable th,
+.goalTable td {
   width: 250px;
-  padding: 0.5rem;
-  text-align: center;
+  padding: 12px 15px;
+  text-align: left;
   word-wrap: break-word;
-
+  color: #f7f4ef;
 }
 
-.completed-row {
-  border-bottom: 1px solid grey;
+.goalTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.goalTable tbody:nth-of-type(even) {
+  background-color: grey;
+}
+
+.goalTable tbody:last-of-type {
+  border-bottom: 2px solid #feaa00;
 }
 
 .no-display {

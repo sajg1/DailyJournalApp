@@ -26,7 +26,7 @@ class CompletedGoalTable extends Component {
       completedGoalTableDisplay =
         <div className="completedGoals">
           <h3>Completed Goals</h3>
-          <table className="completedGoalsTable">
+          <table className="goalTable">
             <thead>
               <tr className="completed-title-row">
                 <th>Start Date</th>

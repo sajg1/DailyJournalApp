@@ -30,7 +30,7 @@ class CurrentGoalTable extends Component {
           <h3>Current Goals</h3>
           <table className="goalTable">
             <thead>
-              <tr>
+              <tr className="current-title-row">
                 <th>Start Date</th>
                 <th>Description</th>
                 <th>TimeScale</th>

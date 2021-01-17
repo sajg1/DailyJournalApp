@@ -50,29 +50,35 @@ class GoalForm extends Component {
   }
   render() {
     return(
-      <div className="goal-form">
-        <h4>Enter your Goals below to keep track of your progress: </h4>
-        <form onSubmit={this.handleGoalSubmit}>
-          <div className="row">
-            <div className="col-25">
-              <label htmlFor="goal-description">What is your goal : </label>
+      <div>
+        <div className="form-title">
+          <h1>Goals</h1>
+          <p>Before setting you're goals <a className="non-nav-link" href="https://www.mindtools.com/pages/article/newHTE_90.htm" target="_blank">here</a> are the five golden rules of Goal Setting  in order to set yourself up for success.</p>
+        </div>
+        <div className="goal-form">
+          <h4>Enter your Goals below to keep track of your progress: </h4>
+          <form onSubmit={this.handleGoalSubmit}>
+            <div className="row">
+              <div className="col-25">
+                <label htmlFor="goal-description">What is your goal : </label>
+              </div>
+              <div className="col-75">
+                <input value={this.state.goalDescription} type="text" onChange={this.handleGoalChange} id="goal-description"></input>
+              </div>
             </div>
-            <div className="col-75">
-              <input value={this.state.goalDescription} type="text" onChange={this.handleGoalChange} id="goal-description"></input>
+            <div className="row">
+              <div className="col-25">
+                <label htmlFor="timescale">Timescale to complete this goal : </label>
+              </div>
+              <div className="col-75">
+                <input value={this.state.timescale} type="text" onChange={this.handleTimeScaleChange} id="timescale"></input>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-25">
-              <label htmlFor="timescale">Timescale to complete this goal : </label>
+            <div className="row">
+              <input className="pretty-button" type="submit" value="Set your Goal"></input>
             </div>
-            <div className="col-75">
-            <input value={this.state.timescale} type="text" onChange={this.handleTimeScaleChange} id="timescale"></input>
-            </div>
-          </div>
-          <div className="row">
-            <input className="pretty-button" type="submit" value="Set your Goal"></input>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
