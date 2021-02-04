@@ -1,0 +1,50 @@
+.vert-input {
+  display: flex;
+  flex-direction:column;
+  margin: 0 0 5px 50px;
+
+}
+
+h4 {
+  text-align: left;
+  padding-left: 30px;
+}
+
+input[type=text] {
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.row {
+  margin: 10px;
+  padding: 20px;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin-left: 50px;
+  border-radius: 4px;
+}
+
+.no-display {
+  color: #f7f4ef;
+  background-color: #9F948D;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 30px;
+  border-radius: 4px;
+  margin: 20px 200px 20px 200px;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(192,178,196,0);
+
+}
+
+.intro-text {
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #FCFBFB;
+  color: #9F948D;
+  max-width: 80%;
+}
